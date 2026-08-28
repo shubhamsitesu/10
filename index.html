@@ -8,7 +8,7 @@
     <meta property="og:title" content="🎁 Shubham Gupta ne bheja aapko Raksha Bandhan Gift!">
     <meta property="og:description" content="🪔 Raksha Bandhan ka special gift box kholo! Rupee notes, chocolates aur pyaar bhara message aapka intezaar kar raha hai. Click karo aur surprise dekho! 💝">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rakshabandhan-gift.vercel.app">
+    <meta property="og:url" content="https://10th/">
     <meta property="og:image" content="https://em-content.zobj.net/source/microsoft/379/gift_1f381.png">
     <meta property="og:site_name" content="Raksha Bandhan Special">
     <meta property="og:locale" content="hi_IN">
@@ -33,6 +33,25 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; overflow: hidden;
             cursor: default; user-select: none; -webkit-user-select: none; position: relative;
         }
+
+        /* BLINK OVERLAY */
+        .blink-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 5;
+            background: radial-gradient(circle at 30% 40%, rgba(255,255,0,0.2) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(255,100,0,0.15) 0%, transparent 40%);
+            animation: blinkLight 1.5s ease-in-out infinite;
+        }
+        @keyframes blinkLight {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.9; }
+        }
+
         .bg-particle { position: fixed; pointer-events: none; border-radius: 50%; animation: floatUp linear infinite; opacity: 0; z-index: 0; }
         .bg-particle.gold-dust { background: radial-gradient(circle, #FFD700, #FFA500); box-shadow: 0 0 6px 2px rgba(255,215,0,0.6); }
         .bg-particle.red-dust { background: radial-gradient(circle, #FF4444, #CC0000); box-shadow: 0 0 6px 2px rgba(255,68,68,0.5); }
@@ -130,7 +149,6 @@
         @keyframes rakhiGlow { 0% { box-shadow: 0 0 30px rgba(255,165,0,0.7), 0 0 60px rgba(255,100,0,0.3); } 100% { box-shadow: 0 0 55px rgba(255,165,0,1.2), 0 0 110px rgba(255,100,0,0.7); } }
         @keyframes ringRotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 
-        /* FOUNTAIN UP NOTE */
         .fountain-note {
             position: fixed; pointer-events: none; z-index: 47; width: 50px; height: 25px; border-radius: 3px;
             display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 8px;
@@ -152,7 +170,6 @@
             100% { transform: translateY(110vh) translateX(calc(var(--fx, 30px) * 2.5)) rotate(calc(var(--fr, 180deg) * 4)) scale(0.5); opacity: 0; }
         }
 
-        /* FOUNTAIN UP CHOCOLATE */
         .fountain-choc {
             position: fixed; pointer-events: none; z-index: 47; font-size: 26px; will-change: transform, opacity;
             filter: drop-shadow(0 4px 12px rgba(139,69,19,0.8)); animation: chocFountainUp var(--dur) cubic-bezier(0.15,0.6,0.4,1) forwards;
@@ -166,7 +183,6 @@
             100% { transform: translateY(110vh) translateX(calc(var(--fx, -30px) * 3)) rotate(calc(var(--fr, -90deg) * 4)) scale(0.45); opacity: 0; }
         }
 
-        /* FALLING NOTE */
         .falling-note {
             position: fixed; pointer-events: none; z-index: 46; width: 48px; height: 24px; border-radius: 3px;
             display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 8px;
@@ -187,7 +203,6 @@
             100% { transform: translateY(105vh) translateX(calc(var(--nx, 30px) * 2)) rotate(calc(var(--nr, 120deg) * 3)) scale(0.5); opacity: 0; }
         }
 
-        /* FALLING CHOCOLATE */
         .falling-choc {
             position: fixed; pointer-events: none; z-index: 46; font-size: 24px; will-change: transform, opacity;
             filter: drop-shadow(0 4px 12px rgba(139,69,19,0.7)); animation: chocFall var(--dur) cubic-bezier(0.25,0.6,0.5,1) forwards;
@@ -257,15 +272,6 @@
         .close-card-btn { margin-top: 12px; padding: 10px 25px; background: linear-gradient(135deg, var(--red), var(--maroon)); color: white; border: none; border-radius: 25px; font-size: 0.85rem; cursor: pointer; letter-spacing: 1px; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(139,0,0,0.5); }
         .close-card-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(139,0,0,0.7); background: linear-gradient(135deg, #E53935, #8B0000); }
 
-        /* SHARE */
-        .share-section { display: flex; gap: 10px; margin-top: 12px; justify-content: center; align-items: center; flex-wrap: wrap; z-index: 10; position: relative; }
-        .share-btn { padding: 9px 18px; border-radius: 25px; cursor: pointer; font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; border: none; transition: all 0.3s ease; display: flex; align-items: center; gap: 6px; color: white; }
-        .share-btn.whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); box-shadow: 0 5px 15px rgba(37,211,102,0.5); }
-        .share-btn.whatsapp:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(37,211,102,0.7); }
-        .share-btn.copy { background: linear-gradient(135deg, #FF6B00, #E65100); box-shadow: 0 5px 15px rgba(255,107,0,0.5); }
-        .share-btn.copy:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(255,107,0,0.7); }
-
-        /* BHOOK BHOOK FIREWORK */
         .bhook-particle {
             position: fixed; pointer-events: none; z-index: 48; border-radius: 50%;
             animation: bhookExplode linear forwards;
@@ -286,11 +292,12 @@
             .fountain-note, .falling-note { width: 38px; height: 19px; font-size: 6px; }
             .fountain-note::before, .falling-note::before { font-size: 10px; }
             .fountain-choc, .falling-choc { font-size: 20px; }
-            .share-btn { padding: 7px 12px; font-size: 0.7rem; }
         }
     </style>
 </head>
 <body>
+
+    <div class="blink-overlay"></div>
 
     <div class="overlay" id="overlay"></div>
 
@@ -327,8 +334,6 @@
         </div>
 
         <p class="instruction" id="instructionText">🎁 Gift box pe click karo surprise ke liye! 🎁</p>
-
-       
     </div>
 
     <div class="message-card" id="messageCard">
@@ -350,14 +355,9 @@
             const instructionText = document.getElementById('instructionText');
             const mainContainer = document.getElementById('mainContainer');
             const closeCardBtn = document.getElementById('closeCardBtn');
-            const shareSection = document.getElementById('shareSection');
-            const whatsappShareBtn = document.getElementById('whatsappShareBtn');
-            const copyLinkBtn = document.getElementById('copyLinkBtn');
 
             let isOpened = false;
             let moneyChocInterval = null;
-            const shareUrl = window.location.href;
-            const shareText = "🎁 *Shubham Gupta* ne bheja aapko Raksha Bandhan ka special gift! 🪔\n\nClick karo aur gift box kholo - Rupee notes, chocolates aur pyaar bhara message aapka intezaar kar raha hai! 💝\n\n👉 " + shareUrl;
 
             function createBackgroundParticles() {
                 const colors = ['gold-dust', 'red-dust', 'orange-dust', 'saffron-dust', 'green-dust'];
@@ -503,7 +503,7 @@
             }
 
             function spawnFallingChoc(x, y) {
-                const chocs = ['🍫','🍬','🍭','🍩','🧁','🍫','🍪','🍫','🎂','🍮','🍫','🍡','🍰'];
+                const chocs = ['🍫','🍬','🍭','🍩','🧁','🍪','🎂','🍮','🍡','🍰'];
                 const choc = document.createElement('div');
                 choc.className = 'falling-choc';
                 choc.textContent = chocs[Math.floor(Math.random() * chocs.length)];
@@ -594,7 +594,6 @@
                 instructionText.style.opacity = '1';
                 instructionText.style.color = '#FFD700';
 
-                // Massive upward fountain burst
                 setTimeout(() => {
                     for (let w = 0; w < 10; w++) {
                         setTimeout(() => {
@@ -606,7 +605,6 @@
                     }
                 }, 200);
 
-                // Extra waves
                 setTimeout(() => {
                     for (let w = 0; w < 5; w++) {
                         setTimeout(() => {
@@ -616,12 +614,10 @@
                     }
                 }, 1500);
 
-                // Confetti
                 setTimeout(() => { createConfettiBurst(centerX, centerY, 90); }, 150);
                 setTimeout(() => { createConfettiBurst(centerX, centerY - 60, 60); }, 450);
                 setTimeout(() => { createConfettiBurst(centerX, centerY - 80, 50); }, 850);
 
-                // Continuous falling
                 setTimeout(() => {
                     moneyChocInterval = setInterval(() => {
                         if (Math.random() > 0.4) spawnFallingNote(centerX, centerY - 40);
@@ -631,7 +627,6 @@
                     }, 280);
                 }, 2600);
 
-                setTimeout(() => { shareSection.style.display = 'flex'; }, 1400);
                 setTimeout(() => { overlay.classList.add('show'); messageCard.classList.add('open'); }, 3300);
             }
 
@@ -645,29 +640,10 @@
                 createConfettiBurst(boxRect.left + boxRect.width / 2, boxRect.top + 50, 25);
             }
 
-            function shareWhatsApp() {
-                const waUrl = 'https://wa.me/?text=' + encodeURIComponent(shareText);
-                window.open(waUrl, '_blank');
-            }
-            function copyLink() {
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(shareText).then(() => { alert('✅ Link copy ho gaya!'); }).catch(() => fallbackCopy());
-                } else fallbackCopy();
-            }
-            function fallbackCopy() {
-                const ta = document.createElement('textarea');
-                ta.value = shareText; ta.style.position = 'fixed'; ta.style.opacity = '0';
-                document.body.appendChild(ta); ta.select();
-                try { document.execCommand('copy'); alert('✅ Link copy ho gaya!'); } catch(e) { alert('❌ Link: ' + shareUrl); }
-                document.body.removeChild(ta);
-            }
-
             giftBoxContainer.addEventListener('click', openGift);
             giftBoxContainer.addEventListener('touchend', (e) => { e.preventDefault(); openGift(); });
             closeCardBtn.addEventListener('click', (e) => { e.stopPropagation(); closeMessage(); });
             overlay.addEventListener('click', closeMessage);
-            whatsappShareBtn.addEventListener('click', shareWhatsApp);
-            copyLinkBtn.addEventListener('click', copyLink);
             document.addEventListener('keydown', (e) => {
                 if (e.key === ' ' || e.key === 'Enter') {
                     if (!isOpened) openGift();
